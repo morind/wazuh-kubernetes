@@ -7,7 +7,7 @@ echo "Root CA"
 
 openssl genrsa -out root-ca-key.pem 2048
 
-openssl req -days 3650 -new -x509 -sha256 -key root-ca-key.pem -out root-ca.pem -subj "/C=US/L=California/O=Company/CN=root-ca"
+openssl req -days 3650 -new -x509 -sha256 -key root-ca-key.pem -out root-ca.pem -subj "/C=FR/L=Paris/O=Gladia/CN=root-ca"
 
 echo "Admin cert"
 
@@ -21,7 +21,7 @@ openssl pkcs8 -inform PEM -outform PEM -in admin-key-temp.pem -topk8 -nocrypt -v
 
 echo "create: admin.csr"
 
-openssl req -days 3650 -new -key admin-key.pem -out admin.csr -subj "/C=US/L=California/O=Company/CN=admin"
+openssl req -days 3650 -new -key admin-key.pem -out admin.csr -subj "/C=FR/L=Paris/O=Gladia/CN=admin"
 
 echo "create: admin.pem"
 
@@ -40,7 +40,7 @@ openssl pkcs8 -inform PEM -outform PEM -in node-key-temp.pem -topk8 -nocrypt -v1
 
 echo "create: node.csr"
 
-openssl req -days 3650 -new -key node-key.pem -out node.csr -subj "/C=US/L=California/O=Company/CN=*.wazuh-indexer"
+openssl req -days 3650 -new -key node-key.pem -out node.csr -subj "/C=FR/L=Paris/O=Gladia/CN=*.wazuh-indexer"
 
 echo "create: node.pem"
 
@@ -58,7 +58,7 @@ openssl pkcs8 -inform PEM -outform PEM -in dashboard-key-temp.pem -topk8 -nocryp
 
 echo "create: dashboard.csr"
 
-openssl req -days 3650 -new -key dashboard-key.pem -out dashboard.csr -subj "/C=US/L=California/O=Company/CN=dashboard"
+openssl req -days 3650 -new -key dashboard-key.pem -out dashboard.csr -subj "/C=FR/L=Paris/O=Gladia/CN=dashboard"
 
 echo "create: dashboard.pem"
 
@@ -78,7 +78,7 @@ openssl pkcs8 -inform PEM -outform PEM -in filebeat-key-temp.pem -topk8 -nocrypt
 
 echo "create: filebeat.csr"
 
-openssl req -days 3650 -new -key filebeat-key.pem -out filebeat.csr -subj "/C=US/L=California/O=Company/CN=filebeat"
+openssl req -days 3650 -new -key filebeat-key.pem -out filebeat.csr -subj "/C=FR/L=Paris/O=Gladia/CN=filebeat"
 
 echo "create: filebeat.pem"
 
